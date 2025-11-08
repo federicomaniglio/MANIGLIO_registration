@@ -36,7 +36,7 @@ if(!empty($_POST)){
             "verification_expires" => ($token_info[1] instanceof DateTimeInterface) ? $token_info[1]->format("Y-m-d H:i:s") : $token_info[1]
         ]);
 
-        $url = urlencode("http://localhost/MANIGLIO_registration/confirm_verification.php?token=$token_info[0]");
+        $url = "http://localhost/MANIGLIO_registration/confirm_verification.php?token=" . urlencode($token_info[0]);
 
         sendVerificationEmail($_POST['email'], $_POST["username"], $url);
 
