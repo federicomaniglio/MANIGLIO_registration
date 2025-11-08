@@ -19,7 +19,8 @@ $dotenv->load();
 
 
 
-function sendVerificationEmail(string $email, string $username, string $url){
+function sendVerificationEmail(string $email, string $username, string $url): void
+{
 
     $mail = new PHPMailer(true);
 
@@ -45,7 +46,7 @@ function sendVerificationEmail(string $email, string $username, string $url){
         $mail->Subject = 'Registration Email Verification';
 
         $mail->Body = "Hi " . $username . ",\n"
-            ."The url code is: " . $url . "\n";
+            ."The verification url code is: " . $url . "\n";
 
 
         $mail->send();

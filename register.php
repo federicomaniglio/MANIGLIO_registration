@@ -40,13 +40,6 @@ if(!empty($_POST)){
 
         sendVerificationEmail($_POST['email'], $_POST["username"], $url);
 
-
-
-
-
-
-
-
     }
 
 
